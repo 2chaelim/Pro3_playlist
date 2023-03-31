@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/root.css" />
+    <link rel="stylesheet" href="./css/my_reset.css" />
+    <link rel="stylesheet" href="./css/edit.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="h1 mw">
+        <button class="back"><i class="fa-solid fa-angle-left"></i></button>
+        <h1>Edit Song</h1>
+      </div>
+      <ul class="cate mw">
+        <li>Party</li>
+        <li>Chill</li>
+        <li>Focus</li>
+        <li>Fitness</li>
+        <li>Romance</li>
+        <li>Energy</li>
+        <li>Easy Listening</li>
+        <li>Sleep</li>
+        <li>Drive</li>
+      </ul>
+      <section class="write-con mw">
+        <ul class="box1">
+          <li class="title">
+            Title
+            <textarea placeholder="Edit title"></textarea>
+          </li>
+          <li class="artist">
+            Artist <textarea placeholder="Edit artist"></textarea>
+          </li>
+        </ul>
+        <ul class="box2">
+          <li>Album Introduce</li>
+          <textarea
+            id="albumInt"
+            oninput="autoResize"
+            placeholder="Edit album introduce"
+          ></textarea>
+        </ul>
+        <ul class="box3">
+          <li>Lyrics</li>
+          <textarea
+            id="lyrics"
+            oninput="autoResize"
+            placeholder="Edit lyrics"
+          ></textarea>
+        </ul>
+        <ul class="box4">
+          <li>Comments</li>
+          <textarea id="" oninput="" placeholder="Edit comments"></textarea>
+        </ul>
+        <ul class="box5">
+          <li>Link to</li>
+          <textarea id="" oninput="" placeholder="Edit video link"></textarea>
+        </ul>
+      </section>
+      <div class="add-btn mw"><button>Edit</button></div>
+    </div>
+  </body>
+</html>

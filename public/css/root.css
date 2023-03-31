@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+:root {
+  --mw: 390px;
+  --main_white: #fafafa;
+  --main_black: #151515;
+  --point_mint: #00ffd1;
+  --point_mintG: linear-gradient(95deg, #00ffd1, #7bdfff);
+  --sup_gray: rgb(150, 150, 150);
+  --sup_red: #c80000;
+  --sup_redG: linear-gradient(45deg, #c80000, 80%, #956b6b);
+  --font_Mon: "Montserrat", sans-serif;
+  --font_Play: "Playfair Display", serif;
+  --gapL: 60px;
+  --gapM: 32px;
+  --gapS: 16px;
+  --gapSs: 0.5rem;
+}
+.wrap {
+  background-image: url(../img/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.mw {
+  max-width: var(--mw);
+  margin: auto;
+}
+
+/* popup */
+.popup {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--main_white);
+  color: var(--main_black);
+  width: 70%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding-top: 32px;
+  border-radius: 20px;
+  display: none;
+}
+.popup.on {
+  display: block;
+}
+.popup p {
+  line-height: 1.5rem;
+  padding-bottom: 32px;
+}
+.popup-btn {
+  border-top: 1px solid var(--sup_gray);
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.popup-btn button {
+  width: calc(100% / 2);
+  padding: 1rem 0;
+  border: none;
+  background-color: var(--main_white);
+  font-family: var(--font_Play);
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--main_black);
+  cursor: pointer;
+}
+.popup-btn button:nth-child(1) {
+  border-right: 1px solid var(--sup_gray);
+  color: var(--sup_red);
+}
+.popup-btn button:hover {
+  background-color: rgb(190, 190, 190);
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/root.css" />
+    <link rel="stylesheet" href="/public/css/my_reset.css" />
+    <link rel="stylesheet" href="/public/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hd mw">
+        <p class="title-top"><span>songs</span> for TODAY</p>
+        <h1 class="main-title">Playlist</h1>
+        <p class="title-bottom">
+          Make your own playlist<br />feel special mood of the day
+        </p>
+      </header>
+      <div class="swiper mySwiper cate">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Chill</div>
+          <div class="swiper-slide">Focus</div>
+          <div class="swiper-slide">Fitness</div>
+          <div class="swiper-slide">Romance</div>
+          <div class="swiper-slide">Sleep</div>
+          <div class="swiper-slide">Party</div>
+          <div class="swiper-slide">Energy</div>
+          <div class="swiper-slide">Easy Listening</div>
+          <div class="swiper-slide">Drive</div>
+        </div>
+      </div>
+      <div class="search mw">
+        <input type="text" class="search-box" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <ul class="music-list mw">
+        <li>
+          <p class="music-title">Music Title</p>
+          <div class="music-info">
+            <p>Artist Name</p>
+            <p>0000 / 00 / 00</p>
+          </div>
+        </li>
+        <li>
+          <p class="music-title">Music Title</p>
+          <div class="music-info">
+            <p>Artist Name</p>
+            <p>0000 / 00 / 00</p>
+          </div>
+        </li>
+        <li>
+          <p class="music-title">Music Title</p>
+          <div class="music-info">
+            <p>Artist Name</p>
+            <p>0000 / 00 / 00</p>
+          </div>
+        </li>
+        <li>
+          <p class="music-title">Music Title</p>
+          <div class="music-info">
+            <p>Artist Name</p>
+            <p>0000 / 00 / 00</p>
+          </div>
+        </li>
+        <li>
+          <p class="music-title">Music Title</p>
+          <div class="music-info">
+            <p>Artist Name</p>
+            <p>0000 / 00 / 00</p>
+          </div>
+        </li>
+      </ul>
+      <div class="page">
+        <div class="prev">
+          <i class="fa-solid fa-play"></i>
+          <i class="fa-solid fa-play"></i>
+        </div>
+        <div class="next">
+          <i class="fa-solid fa-play"></i>
+          <i class="fa-solid fa-play"></i>
+        </div>
+      </div>
+      <div class="index-btn mw">
+        <a class="indexBtn" href="/write">what is today's song?</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".cate", {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        freeMode: true,
+      });
+    </script>
+  </body>
+</html>

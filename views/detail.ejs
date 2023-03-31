@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/root.css" />
+    <link rel="stylesheet" href="./css/my_reset.css" />
+    <link rel="stylesheet" href="./css/detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="play-box">
+        <div class="video"></div>
+        <button class="back"><i class="fa-solid fa-angle-left"></i></button>
+        <button class="play">
+          <p></p>
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <a href="#" class="gotoweb"
+          >View on the web<i class="fa-solid fa-angle-right"></i
+        ></a>
+      </div>
+      <div class="conWrapper">
+        <ul class="cate mw">
+          <li>Chill</li>
+          <li>Romance</li>
+        </ul>
+        <ul class="detail-con mw">
+          <li>
+            <h3>Music Title</h3>
+            <p>Artist Name</p>
+          </li>
+          <li>
+            <h3>Album Introduce</h3>
+            <p class="int-box">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dolores commodi distinctio rem veniam non minus eos impedit nulla
+              ducimus iusto, alias qui. Perferendis maxime quae praesentium
+              placeat illum exercitationem! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Repellendus omnis corporis deleniti
+              deserunt ipsa repudiandae ullam aspernatur neque assumenda iure.
+            </p>
+            <button class="viewAll1">view all</button>
+          </li>
+          <li>
+            <h3>Lyrics</h3>
+            <p class="lyrics-box">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              deleniti optio quod velit, dignissimos debitis libero placeat
+              impedit quasi recusandae quis maxime culpa. Eligendi explicabo
+              provident libero, atque officiis itaque, quas dicta, obcaecati
+              praesentium est odio in numquam commodi a. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Sunt deleniti optio quod velit,
+              dignissimos debitis libero placeat impedit quasi recusandae quis
+              maxime culpa. Eligendi explicabo provident libero, atque officiis
+              itaque, quas dicta, obcaecati praesentium est odio in numquam
+              commodi a.itaque, quas dicta, obcaecati praesentium est odio in
+              numquam commodi a. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Sunt deleniti optio quod velit, dignissimos
+              debitis libero placeat impedit quasi recusandae quis maxime culpa.
+              Eligendi explicabo provident libero, atque officiis itaque, quas
+              dicta, obcaecati praesentium est odio in numquam commodi a.
+            </p>
+            <button class="viewAll2">view all</button>
+          </li>
+          <li>
+            <h3>Comments</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Pariatur, quia.
+            </p>
+          </li>
+        </ul>
+        <div class="btn-set mw">
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="bg"></div>
+      <p>Are you sure<br />you want to delete thie song?</p>
+      <div class="popup-btn">
+        <button class="popup-del">Delete</button>
+        <button class="cancel">Cancel</button>
+      </div>
+    </div>
+
+    <script>
+      const del = document.querySelector(".delete");
+      const popup = document.querySelector(".popup");
+      const cancel = document.querySelector(".cancel");
+      const int = document.querySelector(".int-box"),
+        lyrics = document.querySelector(".lyrics-box"),
+        view1 = document.querySelector(".viewAll1"),
+        view2 = document.querySelector(".viewAll2");
+
+      del.addEventListener("click", () => {
+        popup.classList.toggle("on");
+      });
+      cancel.addEventListener("click", () => {
+        popup.classList.remove("on");
+      });
+      view1.addEventListener("click", () => {
+        int.classList.add("on");
+        if (int.classList.contains("on")) {
+          view1.style.display = "none";
+        }
+      });
+      view2.addEventListener("click", () => {
+        lyrics.classList.add("on");
+        if (lyrics.classList.contains("on")) {
+          view2.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
