@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
 
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 const url =
   "mongodb+srv://charry8540:dlcofla0524@cluster0.ehmp7bh.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
@@ -20,26 +20,29 @@ async function main() {
     await client.connect();
     const postCollection = client.db("playlist").collection("post");
     const counterCollection = client.db("playlist").collection("counter");
+    const cateCollection = client.db("playlist").collection("category");
     console.log("서버에 연결됐다");
 
     //GET
     app.get("/", async (req, res) => {
-      // const query = {};
+      const list = cateCollection.find({});
+      const result2 = await list.toArray();
       const cursor = postCollection.find({});
       const result = (await cursor.toArray()).sort().reverse();
-      res.render("list.ejs", { post: result });
+      res.render("list_re.ejs", { post: result, post2: result2 });
     });
 
-    app.get("/write", (req, res) => {
-      res.render("write.ejs");
+    app.get("/write_re", (req, res) => {
+      res.render("write_re.ejs");
     });
 
     app.get("/detail/:id", async function (req, res) {
       const result = await postCollection.findOne({
         _id: parseInt(req.params.id),
       });
-      console.log(result);
-      res.render("detail.ejs", { data: result });
+      const cursor = postCollection.find({});
+      const result2 = (await cursor.toArray()).sort().reverse();
+      res.render("detail.ejs", { data: result, data2: result2 });
     });
 
     app.get("/edit/:id", async function (req, res) {
@@ -51,7 +54,7 @@ async function main() {
 
     //POST
     app.post("/add", async function (req, res) {
-      const { title, date } = req.body;
+      const { title, artist, date } = req.body;
       const { totalcounter } = await counterCollection.findOne({
         name: "count",
       });
@@ -59,6 +62,7 @@ async function main() {
         _id: totalcounter + 1,
         postTitle: title,
         postDate: date,
+        postArtist: artist,
       });
       await counterCollection.updateOne(
         { name: "count" },
@@ -71,7 +75,7 @@ async function main() {
     app.delete("/delete", async function (req, res) {
       req.body._id = parseInt(req.body._id);
       await postCollection.deleteOne(req.body);
-      res.status(200).send({ message: "성공" });
+      res.status(200).send();
     });
 
     //PUT

@@ -46,33 +46,18 @@
         <input type="text" class="search-box" />
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-      <ul class="music-list mw">
-        <% for (list in post){ %>
-        <li data-cate="<%= post[list].category %>">
-          <a href="/detail/<%= post[list]._id %>" class="music-info">
-            <p class="music-count"><%=post[list]._id %></p>
-            <p class="music-title"><%=post[list].postTitle %></p>
-            <div class="music-info">
-              <p><%= post[list].postArtist %></p>
-              <p><%= post[list].postDate %></p>
-            </div>
+      <ul class="list">
+        <% for ( list in post ){ %>
+        <li data-date="<%= post[list].category %>">
+          <a href="/detail/<%= post[list]._id %>">
+            <p><%= post[list].postTitle %></p>
+            <p><%= post[list].postArtist %></p>
+            <!-- <p><%= post[list].postDate %></p> -->
           </a>
         </li>
         <% } %>
       </ul>
-      <div class="page">
-        <div class="prev">
-          <i class="fa-solid fa-play"></i>
-          <i class="fa-solid fa-play"></i>
-        </div>
-        <div class="next">
-          <i class="fa-solid fa-play"></i>
-          <i class="fa-solid fa-play"></i>
-        </div>
-      </div>
-      <div class="index-btn mw">
-        <a class="indexBtn" href="/write">what is today's song?</a>
-      </div>
+      <a href="/write_re">Add</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
