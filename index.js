@@ -29,11 +29,11 @@ async function main() {
       const result2 = await list.toArray();
       const cursor = postCollection.find({});
       const result = (await cursor.toArray()).sort().reverse();
-      res.render("list_re.ejs", { post: result, post2: result2 });
+      res.render("list.ejs", { post: result, post2: result2 });
     });
 
-    app.get("/write_re", (req, res) => {
-      res.render("write_re.ejs");
+    app.get("/write", (req, res) => {
+      res.render("write.ejs");
     });
 
     app.get("/detail/:id", async function (req, res) {
@@ -55,6 +55,7 @@ async function main() {
     //POST
     app.post("/add", async function (req, res) {
       const { title, artist, date } = req.body;
+      console.log(req.body.title);
       const { totalcounter } = await counterCollection.findOne({
         name: "count",
       });

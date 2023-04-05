@@ -49,8 +49,8 @@
       <ul class="music-list mw">
         <% for (list in post){ %>
         <li data-cate="<%= post[list].category %>">
-          <a href="/detail/<%= post[list]._id %>" class="music-info">
-            <p class="music-count"><%=post[list]._id %></p>
+          <a href="/detail/<%= post[list]._id %>" class="music-info1">
+            <p hidden class="music-count"><%=post[list]._id %></p>
             <p class="music-title"><%=post[list].postTitle %></p>
             <div class="music-info">
               <p><%= post[list].postArtist %></p>

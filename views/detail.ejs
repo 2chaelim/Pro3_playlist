@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/root.css" />
-    <link rel="stylesheet" href="./css/my_reset.css" />
-    <link rel="stylesheet" href="./css/detail.css" />
+    <link rel="stylesheet" href="/public/css/root.css" />
+    <link rel="stylesheet" href="/public/css/my_reset.css" />
+    <link rel="stylesheet" href="/public/css/detail.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -36,26 +36,6 @@
         </ul>
         <ul class="detail-con mw">
           <li>
-            <h3><%= data.postTitle %></h3>
-            <p><%= data.postArtist %></p>
-          </li>
-          <li>
-            <h3>Album Introduce</h3>
-            <p><%= data.albumInt %></p>
-          </li>
-          <li>
-            <h3>Lyrics</h3>
-            <p><%= data.lyrics %></p>
-          </li>
-          <li>
-            <h3>Comments</h3>
-            <p><%= data.comments %></p>
-          </li>
-          <li>
-            <h3>Link to</h3>
-            <p><%= data.linkTo %></p>
-          </li>
-          <!-- <li>
             <h3>Album Introduce</h3>
             <p class="int-box">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
@@ -94,7 +74,7 @@
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Pariatur, quia.
             </p>
-          </li> -->
+          </li>
         </ul>
         <div class="btn-set mw">
           <button class="edit"><a href="/edit/<%= data._id %>">Edit</a></button>
